@@ -1,0 +1,6 @@
+print("Enter your height in m : ", end= ' ')
+h = float(input())
+print("\n Enter your mass in kg : ", end = ' ')
+m = float(input())
+bmi = m/(h*h)
+print("\n BMI : ", bmi, " kg m^2")
