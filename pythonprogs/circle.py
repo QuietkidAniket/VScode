@@ -1,9 +1,6 @@
 """circle module
 """
- 
 Pi = 3.141592653589793438
-
-
 def diameter(radius = 1):
     return radius*2
 def perimeter(radius = 1):
@@ -16,11 +13,12 @@ def anglesubtendedbyarcoflengths_rad(s = 1.0, radius = 1):
     theta = s / radius
     return theta
 def anglesubtendedbyarcoflengths_deg(s = 1.0, radius = 1):
-    theta = anglesubtendedbyarcoglengths_rad(s,radius)
+    theta = anglesubtendedbyarcoflengths_rad(s,radius)
     thetaindeg = (theta*180)/Pi
     return thetaindeg
 def areaofmajorsectormadebyarcoflengths(s = 1.0, radius = 1):
-    return anglesubtendedbyarcoflengths_rad(s,radius)/Pi * area(radius)
+    return (anglesubtendedbyarcoflengths_rad(s,radius)* radius**2) /2
 def areaofminorsectormadebyarcoflengths(s = 1.0, radius = 1):
     return area(radius) - (anglesubtendedbyarcoflengths_rad(s,radius)/Pi * area(radius))
+    
 

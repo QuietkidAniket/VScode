@@ -1,4 +1,4 @@
-T = int(inout()
+T = int(input())
 for i in range(T):
 	A,B,X,Y = map(int,input().split())
 	if(A*B == X*Y):

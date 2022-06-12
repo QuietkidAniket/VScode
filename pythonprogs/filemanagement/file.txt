@@ -1,0 +1,2 @@
+This is my file. It was created on 6/6/22. Using it for demonstrating file management in Python
+This is a line entered after moving the cursor to the second line.
