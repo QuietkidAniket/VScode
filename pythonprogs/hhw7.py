@@ -1,3 +1,4 @@
+"""Recursivly find the factorial of a natural number"""
 #a recursive function which returns the factorial of a number
 def factorial(n):
     if n == 1:

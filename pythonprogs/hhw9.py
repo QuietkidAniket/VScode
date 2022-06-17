@@ -1,3 +1,5 @@
+"""Remove all the lines that contain the character "a" in a file and write it into 
+another file"""
 #a file handler
 myfile = open(r"E:\VScode\pythonprogs\mytxtfile.txt", "r")
 newfile = open(r"E:\VScode\pythonprogs\newtxtfile.txt","w+")
@@ -15,4 +17,3 @@ str = "".join(newfile.readlines())
 print(str)
 myfile.close()
 newfile.close()
-    

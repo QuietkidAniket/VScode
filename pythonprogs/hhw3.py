@@ -1,3 +1,4 @@
+"""Write a program to check if the entered number is Armstrong or not"""
 num = int(input("Enter the number : "))
 sum = 0
 no_of_digits = 0

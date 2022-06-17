@@ -1,3 +1,4 @@
+"""Read a file line by line and print it"""
 #a file handle
 myfile = open(r"E:\VScode\pythonprogs\students.txt","r+")
 str = " " #a space is included in the string

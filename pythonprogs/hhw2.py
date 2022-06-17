@@ -1,3 +1,4 @@
+"""Write a program to find whether an inputtednumber is perfect or not"""
 num = int(input("Enter the number : "))
 sum_of_divisors = 0
 for i in range(1,int(num/2)+1):
