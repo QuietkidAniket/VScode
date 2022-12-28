@@ -8,5 +8,6 @@ public class prog{
             int X = sc.nextInt();
             System.out.println(K - X);
         }
+        sc.close();
     }
 }
