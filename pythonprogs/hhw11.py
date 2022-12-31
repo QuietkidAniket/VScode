@@ -1,47 +1,45 @@
-stack = None
-top = -1
-def initstack(length=10):
-    stack = list(length)
+""" Create a binary file with roll number, name and marks. Input a roll number and update the marks """
+import pickle 
 
-def push(item):
-    if len(stack) == top :
-        print("Stack Overflow!!! \t cannot accomodate more items in the stack")
-        return 
-    stack.append(item)
-    top = len(stack) - 1
+stu1 = {'roll' : 1, 'name' : 'Brian', 'marks' : 97}
+stu2 = {'roll' : 2, 'name' : 'Blanca', 'marks' : 98}
+stu3 = {'roll' : 3, 'name' : 'Alexandra', 'marks' : 100}
 
-def pop():
-    if top == -1:
-        print("Stack Underflow!!! \t no element to remove")
-        return
-    stack.pop()
-    top = len(stack) - 1
+#a file handler in 'append binary +' mode
+myfile = open(r'E:\\VScode\pythonprogs\binaryfiledemo.dat','ab+')
 
-def peek():
-    if top == -1:
-        print("No elements to show!")
-    return stack[top]
-def display():
-    if len(stack) == 0:
-        print("Stack is empty")
-    else:
-        for item in stack:
-            print(item)
+#writing records
+pickle.dump(stu1, myfile)
+pickle.dump(stu2, myfile)
+pickle.dump(stu3, myfile)
+myfile.close()
+
+#updating a record
+myfile2 = open(r'E:\\VScode\pythonprogs\binaryfiledemo.dat','rb+')
+myfile2.seek(0)
+found = False
+try:
+    roll = int(input("Enter the roll number to be searched : "))
+    marks = int(input("Enter the new marks : "))
+    while True:
+        location = myfile2.tell()
+        rec = dict(pickle.load(myfile2))
+        
+        if rec['roll'] == roll:
+            print(rec, 'updated to -> ', end = '')
+            rec['marks'] = marks
+            myfile2.seek(location)
+            pickle.dump(rec, myfile2) 
+            print(rec)
+            print("Record updated!")
+            found = True
+            
+            break
+        
+except EOFError:
+    if not found:
+        print("Roll Number not found!")
+    myfile2.close()
     
+     
 
-#demonstrating the initialisation of stack
-initstack(5)
-push('This is the first element')
-push(12)
-push(7.0)
-push(2004)
-push('last element stored')
-print("Last element : ",peek())
-push('This won\'t be stored in the stack')
-pop()
-pop()
-pop()
-pop()
-pop()
-#This will result into an underflow 
-pop()
