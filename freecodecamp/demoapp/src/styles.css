@@ -1,0 +1,62 @@
+/* nav bar items */
+.nav{
+    margin : 0px;
+    padding : 20px 25px;
+    height: 60px;
+    background-color : rgb(31, 30, 30);
+    display : flex;
+    align-items : center;
+}
+nav > div > h3, nav> div> h4 {
+    margin : 0px;
+}
+#header{
+    margin-right:auto;
+    color:cyan;
+    font-weight: 700;    
+}
+body{
+    margin:0px;
+    font-family: Inter, Sans-serif;
+    background-color: #282D35;
+    
+}
+.nav-logo{
+    width : 30px;
+}
+
+
+/* main container items */
+main{
+    padding : 57px 27px;
+    color : white;
+    background-image: url(./images/react-icon-large.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 65%;
+    
+}
+.main> h1{
+    font-size : Inter;
+    font-style :italic;
+    font-weight : bold;
+    margin : 0px;
+    font-size : 39px;
+    letter-spacing : -0.05em;
+}
+.main > ul{
+    max-width : 400px; 
+}
+.main > ul > li::marker{
+    font-size: 1.4rem;
+    color:cyan;
+}
+
+.main > ul> li{
+    font-family : Inter;
+    font-style : normal;
+    font-weight : normal;
+    font-size : 16px;
+    line-height : 19px;
+    padding-block : 10px;
+}

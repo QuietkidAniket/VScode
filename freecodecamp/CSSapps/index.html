@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+<body>
+    <form action="">
+    <div class="form-group">
+      <label for="email" class="form-label">
+        <span aria-hidden="true" class="label__letter" style="--index: 0;">E</span>
+        <span aria-hidden="true" class="label__letter" style="--index: 1;">m</span>
+        <span aria-hidden="true" class="label__letter" style="--index: 2;">a</span>
+        <span aria-hidden="true" class="label__letter" style="--index: 3;">i</span>
+        <span aria-hidden="true" class="label__letter" style="--index: 4;">l</span>
+        <span class="sr-only">Email</span>
+      </label>
+      <div class="form-group__input">
+        <input required type="email" id="email" class="form-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Enter valid email address" placeholder="Enter valid email address" />
+        <div class="form-group__error">Enter a valid email address</div>
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  </body>
+</html>
