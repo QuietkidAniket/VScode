@@ -19,7 +19,7 @@ class Vector_container : public Container{      // superclass : Container, subcl
 
     double& operator[]( int i){ return v[i]; }  //overrides the corresponding member in Container
     int size() const { return v.size(); }       //overrides the corresponding member in Container
-}
+};
 
 class List_container : public Container{
     std::list<double> ld;

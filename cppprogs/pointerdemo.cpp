@@ -10,8 +10,13 @@ using namespace std;
 
 
 int main(){
+
+    int x {5};
+    const int* ptr1 {x};             //a pointer to a const int value
+    int* const ptr2 {x};             //a const pointer to a int value
+    const int* const ptr3 {&x};      //a const pointer to a const int value
     int v[] = {1,2,3,4,5};
-    for (auto x : v) cout<< x << '\n';
+    for (auto c : v) cout<< c << '\n';
 
     int* ptr = &v[2]; //This is a pointer variable (a pointer to int), which stores the address of v[2]
 
