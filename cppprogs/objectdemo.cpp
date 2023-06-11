@@ -16,7 +16,7 @@ class example{
 int main(){
     example obj1(1);                //creating object with automatic storage duration
     example obj2 = example(2);     //creating object with automatic storage duration in a different method
-    example* obj3 = new example(3); //creating object with dynamic storage duaration.
+    example* obj3 = new example(3); //creating object with dynamic storage duration.
     obj1.set(10);
     obj2.set(20);
     obj3->set(30);

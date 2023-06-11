@@ -30,7 +30,23 @@ void greet(std::string* name=nullptr){ //parameter defaulted to nullptr
     std::cout<< (name? *name : "guest") << '\n';
 }
 
+const int& getanumber(){
+    static const int x {5};             //has static duration; destroyed at the end of the program
+    return x;
+}
 
+//why we shoud avoid non const local static variables by reference ::
+const int& getNextId(){
+    static int s_x {0};         //should have been a static const int variable 
+    ++s_x;
+    return s_x;
+}
+void demo(){
+    const int id1 {getNextId()};
+    const int id2 {getNextId()};
+    std::cout << id1 << id2 << '\n';  // actual output : 22 ... which is different from 12 we had expected
+    // this is why we should avoid non const local static variables be reference because id1 and id2 are referencing the same objects
+}
 
 int main(){
     greet();
