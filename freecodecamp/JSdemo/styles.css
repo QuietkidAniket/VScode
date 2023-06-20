@@ -1,0 +1,10 @@
+body{
+    display : grid;
+    min-height:100vh;
+    font-family: 'Google Sans', sans-serif, system-ui;
+    place-items : center;
+    /*overflow : hidden;*/
+    background-color: var(--gray-9);
+    font-size : 1rem;
+}
+
