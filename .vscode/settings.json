@@ -39,6 +39,16 @@
     "iostream": "cpp",
     "iosfwd": "cpp",
     "cassert": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "__bit_reference": "cpp",
+    "__hash_table": "cpp",
+    "__mutex_base": "cpp",
+    "__split_buffer": "cpp",
+    "array": "cpp",
+    "optional": "cpp",
+    "string": "cpp",
+    "tuple": "cpp",
+    "unordered_map": "cpp",
+    "variant": "cpp"
   }
 }
