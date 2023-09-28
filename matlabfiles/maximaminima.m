@@ -1,5 +1,6 @@
 
-f=input('Enter the function: ');
+t = str(input('Enter the function: '));
+f = str2func( ['@', t] )
 fx=diff(f,x);
 fxx=diff(fx,x);
 c=solve(fx);
