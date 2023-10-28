@@ -1,3 +1,3 @@
-typedef char* bo;
+typedef char* string;
 
 

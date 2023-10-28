@@ -1,13 +1,18 @@
 
-t = str(input('Enter the function: '));
-f = str2func( ['@', t] )
+clc 
+clear all
+syms x real
+f = input('Enter the function: ');
 fx=diff(f,x);
 fxx=diff(fx,x);
 c=solve(fx);
 c=double(c);
-for i=1,length(c)
+% iterates through solutions to fx , i.e., c
+for i=1 : length(c)
+    % T1 = fxx(c[i])
     T1=subs(fxx,x,c(i));
     T1=double(T1);
+    % T3 = fxx(c[i])
     T3=subs(f,x,c(i));
     T3=double(T3);
     if(T1==0)

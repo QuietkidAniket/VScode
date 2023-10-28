@@ -19,7 +19,7 @@ int main(void)
     printf("%c \n", *(s+2));// dereferencing the 3rd element, char* is hexadecimal so 2 is added to the hexadecimal memory address
 
     printf("%s \n", s);     // s is char* - a hexadecimal memory address, %s implicitly dereferences the char* to char
-    printf("%s \n", s+1);   // s + 1 is the hexadecimal memory address of first element + 1, and &s dereferences it   
+    printf("%s \n", s+1);   // s + 1 is the hexadecimal memory address of first element + 1, and %s dereferences it   
     printf("%s \n", s+2);   // same thing follows here as well
     // string is implicitly converted into char* on creation, hence treated the same
     printf("%s \n", mystring + 2);
