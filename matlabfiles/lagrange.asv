@@ -14,7 +14,7 @@ X=[h1];
 Y=[h2];
 disp('Stationary points are:')
 STP=table(X,Y);
-range=double([min(S.x)-3 max(S.x)+3 min(S.y)-3 max(S.y)+3]);%setting plot range 
+range=double([min(S.x)-3  max(S.x)+3 min(S.y)-3 max(S.y)+3]);%setting plot range 
 [n,m]=size(St_pts);
 for i = 1:n
 F(i)=subs(f,{x,y},{S.x(i),S.y(i)});
