@@ -14,7 +14,7 @@ public:
         if(low > high)return INT_MIN;
         // middle of the array
         int mid = (low+high) >> 2;
-        // 
+        //  
         int leftsum = 0, rightsum = 0;
         int sum = 0;
         for(int i = mid-1; i >= low; i--){
