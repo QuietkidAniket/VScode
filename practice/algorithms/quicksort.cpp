@@ -10,8 +10,8 @@ vector<T> quicksort(vector<T> array){
         vector<T> lower;
         vector<T> greater;
             for(int i = 1; i < array.size(); i++){
-                    if(array[i] <= pivot){
-                lower.push_back(array[i]);
+                if(array[i] <= pivot){
+                    lower.push_back(array[i]);
                 }else{
                     greater.push_back(array[i]);
                 }

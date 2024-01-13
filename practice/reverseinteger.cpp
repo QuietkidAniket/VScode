@@ -1,17 +1,19 @@
-#include <iostream>
-using namespace std;
-
-//class Solution{
-int main(){
-  int32_t x = 0;
-  cin >> x;
-  int32_t rev = 0;
-  while(x > 0){
-    rev = rev * 10 + x%10;
-    x = x /10;
-  }
-  if(rev <0)cout << 0 ;
-  else cout << rev;
-  return 0; 
-}
-//};
+class Solution {
+public:
+    int reverse(int x) {
+    int32_t rev = 0;
+    int copy = abs(x);
+    int sign = x >= 0 ? 1 : -1;
+    while(copy > 0){
+    
+    if(rev *10l + copy%10 > INT_MAX){
+        rev = 0;
+        break;
+    } 
+    rev = rev*10 + copy%10;
+    copy = copy /10;
+    
+    }
+    return rev*sign;
+    }
+};
