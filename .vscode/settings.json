@@ -50,6 +50,7 @@
     "tuple": "cpp",
     "unordered_map": "cpp",
     "variant": "cpp",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "string_view": "c"
   }
 }
