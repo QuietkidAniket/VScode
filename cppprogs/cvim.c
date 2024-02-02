@@ -1,3 +1,4 @@
+#include "cvim.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -7,13 +8,6 @@ CVim stands for C styled Vim which is inspired directly from the highly popular 
 CVim as the name suggests is also a simple text editor but with only 5 modes/commands : Create, Read, Write, Delete and Help. 
 */
 
-void help();
-void createfile(char* filename);
-void readfile(char* filename);
-void writefile(char* filename);
-void delcharsfromfile(char* filename, long int pos, long int ncharsdelete);
-void insert(char* filename, long int peeklocation);
-void deletefile(char* filename);
 
 // Arguments  : Mode Filename/Mode
 int main(int argc, char **argv){
@@ -37,7 +31,7 @@ void help(){
     printf("./cvim i <filename> <position> <- used for inserting characters from index = position\n\targs = <filename> : name of the file\n\t <position>: index of insertion\n");
     printf("./cvim d <filename> <position> <n> <- used for deleting n characters from index = position\n\t<position> : index of insertion\n\t<n> : number of characters to be deleted \n");
     printf("./cvim del <filename> <- used for deleting a file\n\targs = <filename> : name of the file\n");
-    printf("./cvim h <mode> | .vimc help <mode> <- used for creating a file \n\targs = <mode> = name of the mode about which you want some brief info");
+    printf("./cvim h <mode> | .vimc help <mode> <- used for searching help\n\targs = <mode> = name of the mode about which you want some brief info");
 }
 
 
@@ -135,7 +129,7 @@ void delcharsfromfile(char* filename, long int pos, long int ncharsdelete){
 
     //putting only wanted characters into the file by overwriting onto the file
     FILE* newfileptr;
-    newfileptr = fopen("demo.txt", "w");
+    newfileptr = fopen(filename, "w");
     
     fprintf(newfileptr, "%s", content);
     fclose(newfileptr);
