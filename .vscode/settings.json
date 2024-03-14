@@ -51,6 +51,7 @@
     "unordered_map": "cpp",
     "variant": "cpp",
     "stdio.h": "c",
-    "string_view": "c"
+    "string_view": "c",
+    "stdlib.h": "c"
   }
 }
