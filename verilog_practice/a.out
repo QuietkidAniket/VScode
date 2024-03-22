@@ -7,33 +7,58 @@
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
-S_0x130e04a00 .scope module, "fulladder" "fulladder" 2 1;
+S_0x139f04a60 .scope module, "fulladder_tb" "fulladder_tb" 2 1;
+ .timescale 0 0;
+v0x139f19b30_0 .var "a", 0 0;
+v0x139f19bc0_0 .var "b", 0 0;
+v0x139f19c50_0 .net "carry", 0 0, L_0x139f1a380;  1 drivers
+v0x139f19d20_0 .var "cin", 0 0;
+v0x139f19db0_0 .net "sum", 0 0, L_0x139f19fb0;  1 drivers
+S_0x139f04bd0 .scope module, "f1" "fulladder" 2 4, 3 1 0, S_0x139f04a60;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "a";
     .port_info 1 /INPUT 1 "b";
     .port_info 2 /INPUT 1 "cin";
     .port_info 3 /OUTPUT 1 "sum";
     .port_info 4 /OUTPUT 1 "carry";
-o0x1380400d0 .functor BUFZ 1, C4<z>; HiZ drive
-o0x138040100 .functor BUFZ 1, C4<z>; HiZ drive
-L_0x6000037fc540 .functor XOR 1, o0x1380400d0, o0x138040100, C4<0>, C4<0>;
-o0x138040160 .functor BUFZ 1, C4<z>; HiZ drive
-L_0x6000037fc5b0 .functor XOR 1, L_0x6000037fc540, o0x138040160, C4<0>, C4<0>;
-L_0x6000037fc620 .functor AND 1, o0x1380400d0, o0x138040100, C4<1>, C4<1>;
-L_0x6000037fc690 .functor XOR 1, o0x1380400d0, o0x138040100, C4<0>, C4<0>;
-L_0x6000037fc700 .functor AND 1, o0x138040160, L_0x6000037fc690, C4<1>, C4<1>;
-L_0x6000037fc770 .functor OR 1, L_0x6000037fc620, L_0x6000037fc700, C4<0>, C4<0>;
-v0x600002efc480_0 .net *"_ivl_0", 0 0, L_0x6000037fc540;  1 drivers
-v0x600002efc510_0 .net *"_ivl_4", 0 0, L_0x6000037fc620;  1 drivers
-v0x600002efc5a0_0 .net *"_ivl_6", 0 0, L_0x6000037fc690;  1 drivers
-v0x600002efc630_0 .net *"_ivl_8", 0 0, L_0x6000037fc700;  1 drivers
-v0x600002efc6c0_0 .net "a", 0 0, o0x1380400d0;  0 drivers
-v0x600002efc750_0 .net "b", 0 0, o0x138040100;  0 drivers
-v0x600002efc7e0_0 .net "carry", 0 0, L_0x6000037fc770;  1 drivers
-v0x600002efc870_0 .net "cin", 0 0, o0x138040160;  0 drivers
-v0x600002efc900_0 .net "sum", 0 0, L_0x6000037fc5b0;  1 drivers
+L_0x139f19e80 .functor XOR 1, v0x139f19b30_0, v0x139f19bc0_0, C4<0>, C4<0>;
+L_0x139f19fb0 .functor XOR 1, L_0x139f19e80, v0x139f19d20_0, C4<0>, C4<0>;
+L_0x139f1a0e0 .functor AND 1, v0x139f19b30_0, v0x139f19bc0_0, C4<1>, C4<1>;
+L_0x139f1a150 .functor XOR 1, v0x139f19b30_0, v0x139f19bc0_0, C4<0>, C4<0>;
+L_0x139f1a2e0 .functor AND 1, v0x139f19d20_0, L_0x139f1a150, C4<1>, C4<1>;
+L_0x139f1a380 .functor OR 1, L_0x139f1a0e0, L_0x139f1a2e0, C4<0>, C4<0>;
+v0x139f08d90_0 .net *"_ivl_0", 0 0, L_0x139f19e80;  1 drivers
+v0x139f194f0_0 .net *"_ivl_4", 0 0, L_0x139f1a0e0;  1 drivers
+v0x139f19590_0 .net *"_ivl_6", 0 0, L_0x139f1a150;  1 drivers
+v0x139f19640_0 .net *"_ivl_8", 0 0, L_0x139f1a2e0;  1 drivers
+v0x139f196f0_0 .net "a", 0 0, v0x139f19b30_0;  1 drivers
+v0x139f197d0_0 .net "b", 0 0, v0x139f19bc0_0;  1 drivers
+v0x139f19870_0 .net "carry", 0 0, L_0x139f1a380;  alias, 1 drivers
+v0x139f19910_0 .net "cin", 0 0, v0x139f19d20_0;  1 drivers
+v0x139f199b0_0 .net "sum", 0 0, L_0x139f19fb0;  alias, 1 drivers
+    .scope S_0x139f04a60;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x139f19d20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x139f19b30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x139f19bc0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x139f19bc0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x139f19b30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x139f19bc0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 10 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
 # The file index is used to find the file name in the following table.
-:file_names 3;
+:file_names 4;
     "N/A";
     "<interactive>";
+    "fulladder_tb.v";
     "fulladder.v";
